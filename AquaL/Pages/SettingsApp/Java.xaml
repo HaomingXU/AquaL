@@ -1,0 +1,29 @@
+﻿<Page x:Class="AquaL.Pages.SettingsApp.Java"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AquaL.Pages.SettingsApp"
+      xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore"
+      mc:Ignorable="d" 
+      d:DesignHeight="324" d:DesignWidth="512"
+      Title="Java" Loaded="Page_Loaded">
+
+    <Grid Background="White" Margin="20,0,20,0">
+        <WrapPanel Orientation="Vertical">
+            <Label Content="Java 虚拟机选择" FontSize="14" FontWeight="Bold"/>
+            <ComboBox x:Name="LaunchSet_JavaJreList" Width="400" LostFocus="LaunchSet_JavaJreList_LostFocus"/>
+            <Label Content="如果您不熟悉此设置，建议优先选择版本号高，不含x86字样的Java版本"/>
+            <Label Content="Java 虚拟机内存大小选择" FontSize="14" FontWeight="Bold" Margin="0,20,0,0"/>
+            <WrapPanel>
+                <Label Content="指定" VerticalAlignment="Center"/>
+                <TextBox x:Name="LaunchSet_JavaJreMemorySize" HorizontalAlignment="Left" VerticalAlignment="Center" Width="100"  KeyDown="LaunchSet_JavaJreMemorySize_KeyDown" input:InputMethod.IsInputMethodEnabled="False" LostFocus="LaunchSet_JavaJreMemorySize_LostFocus"/>
+                <Label Content="MB" VerticalAlignment="Center"/>
+                <Label Content="或者" VerticalAlignment="Center"/>
+                <CheckBox x:Name="AutoMemory" Content="自动选择" VerticalContentAlignment="Center" VerticalAlignment="Center" Checked="AutoMemory_Checked" Unchecked="AutoMemory_Unchecked"/>
+            </WrapPanel>
+            <Label Content="如果您不熟悉此设置，建议自动选择" />
+        </WrapPanel>
+    </Grid>
+
+</Page>

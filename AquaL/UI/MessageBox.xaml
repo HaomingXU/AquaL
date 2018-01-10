@@ -1,0 +1,31 @@
+﻿<Window x:Class="AquaL.UI.MessageBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        Topmost="True"
+        WindowStartupLocation="CenterScreen"
+        SizeToContent="WidthAndHeight"
+        Title="MessageBox" Height="auto" Width="auto" d:DesignWidth="315.467" d:DesignHeight="205.067" Closing="Window_Closing">
+
+    <Border Background="White" CornerRadius="3" Margin="20" Height="auto" Width="auto" MouseDown="Border_MouseDown" Loaded="MsgBoxLoaded">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="20" Direction="270" Opacity="0.8" ShadowDepth="5" Color="#FF526E7C" RenderingBias="Quality"/>
+        </Border.Effect>
+        <StackPanel Background="Transparent" Margin="16" Height="auto" Width="auto">
+            <Label x:Name="Msg_Title" Content="" FontSize="24" Width="auto" Height="auto"/>
+            <Label x:Name="Msg_Content" Content=""/>
+            <Frame x:Name="Msg_CustomContent" Visibility="Collapsed"/>
+            <StackPanel x:Name="Msg_BtnLayout" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+                <Label x:Name="Msg_Btn1" Content="" Foreground="#2A89CB" Margin="10,0,10,0" MouseDown="Msg_Btn1_MouseDown"/>
+                <Label x:Name="Msg_Btn2" Content="" Foreground="#2A89CB" Margin="10,0,10,0" MouseDown="Msg_Btn2_MouseDown"/>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+
+</Window>

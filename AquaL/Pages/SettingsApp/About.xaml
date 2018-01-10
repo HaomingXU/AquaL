@@ -1,0 +1,33 @@
+﻿<Page x:Class="AquaL.Pages.SettingsApp.About"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AquaL.Pages.SettingsApp"
+      mc:Ignorable="d" 
+      d:DesignHeight="324" d:DesignWidth="512"
+      Title="About">
+
+    <Grid Background="White" Margin="20,0,20,0">
+        <Border CornerRadius="10" Width="64" Height="64" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Border.Background>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/AquaL;component/icon.ico"/>
+            </Border.Background>
+        </Border>
+        <Label Content="AquaL" FontSize="24" Margin="74,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock Margin="74,40,20,20">
+            <Run>一个Minecraft 启动器</Run><LineBreak/>
+            <Run>©Project AquaL</Run><LineBreak/>
+            <Run>©アクアえんじょこうさいセンター</Run><LineBreak/>
+            <Run>©QPomelo</Run><LineBreak/>
+            <Run>©Rolcoty</Run><LineBreak/>
+            <Run>1.0.1 公共测试版，以BSD许可证开源</Run><LineBreak/>
+            <Run>本程序使用了以下程序库，请按照各自的协议使用：</Run><LineBreak/>
+            <Run>MaterialDesignXamlToolKit MIT协议</Run><LineBreak/>
+            <Run>KMCCC LGPT v3</Run><LineBreak/>
+            <Run>MahApps.Metro MIT协议</Run><LineBreak/>
+            <Run>Newtonsoft.Json MIT协议
+            </Run>
+        </TextBlock>
+    </Grid>
+</Page>

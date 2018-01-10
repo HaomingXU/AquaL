@@ -1,0 +1,112 @@
+﻿<Page x:Class="AquaL.Pages.SettingsApp.Main"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="414" d:DesignWidth="692"
+      Title="Main">
+
+    <Grid Background="White">
+
+        <!-- 右上角的小齿轮 -->
+        <Grid HorizontalAlignment="Right" VerticalAlignment="Top">
+            <Image Opacity="0.6" Source="/AquaL;component/Icons/settings_gear.png" RenderTransformOrigin="0.5,0.5" Width="190" Height="190" Margin="0,-100,0,0" HorizontalAlignment="Right" VerticalAlignment="Top">
+                <Image.RenderTransform>
+                    <RotateTransform x:Name="big_gear_trans" Angle="0"/>
+                </Image.RenderTransform>
+                <Image.Triggers>
+                    <EventTrigger RoutedEvent="Page.Loaded">
+                        <BeginStoryboard >
+                            <Storyboard>
+                                <DoubleAnimation From="0" To="360" RepeatBehavior="Forever" Duration="0:0:3"
+                                             Storyboard.TargetName="big_gear_trans"
+                                             Storyboard.TargetProperty="Angle"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Image.Triggers>
+            </Image>
+            <Image Opacity="0.6" RenderTransformOrigin="0.5,0.5" Source="/AquaL;component/Icons/settings_gear.png" Width="120" Height="120" Margin="-16,-40,169.6,9.6" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                <Image.RenderTransform>
+                    <RotateTransform x:Name="small_gear_trans" Angle="0"/>
+                </Image.RenderTransform>
+                <Image.Triggers>
+                    <EventTrigger RoutedEvent="Page.Loaded">
+                        <BeginStoryboard >
+                            <Storyboard>
+                                <DoubleAnimation From="355" To="0" RepeatBehavior="Forever" Duration="0:0:1.7"
+                                             Storyboard.TargetName="small_gear_trans"
+                                             Storyboard.TargetProperty="Angle"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Image.Triggers>
+            </Image>
+        </Grid>
+
+        <Label Content="设置" FontSize="32" Margin="20,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+        <!-- 设置项列表 -->
+        <ListView x:Name="Sets" HorizontalAlignment="Left" VerticalAlignment="Stretch"  Margin="20,80,0,0" Width="180" Height="auto" SelectionChanged="Sets_SelectionChanged" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+            <ListViewItem x:Name="JavaSet">
+                <WrapPanel>
+                    <Image Source="/AquaL;component/Icons/settings_icon_java.png" Width="26" Height="26"/>
+                    <Label Content="Java 设置" Margin="10,0,0,0"/>
+                </WrapPanel>
+            </ListViewItem>
+            <ListViewItem>
+                <WrapPanel>
+                    <Image Source="/AquaL;component/Icons/settings_icon_account.png" Width="26" Height="26"/>
+                    <Label Content="账号" Margin="10,0,0,0"/>
+                </WrapPanel>
+            </ListViewItem>
+            <ListViewItem>
+                <WrapPanel>
+                    <Image Source="/AquaL;component/Icons/settings_icon_server.png" Width="26" Height="26"/>
+                    <Label Content="自动进服" Margin="10,0,0,0"/>
+                </WrapPanel>
+            </ListViewItem>
+            <ListViewItem>
+                <WrapPanel>
+                    <Image Source="/AquaL;component/Icons/settings_icon_window_size.png" Width="26" Height="26"/>
+                    <Label Content="游戏窗口大小" Margin="10,0,0,0"/>
+                </WrapPanel>
+            </ListViewItem>
+            <ListViewItem>
+                <WrapPanel>
+                    <Image Source="/AquaL;component/Icons/settings_icon_plugin.png" Width="26" Height="26"/>
+                    <Label Content="插件" Margin="10,0,0,0"/>
+                </WrapPanel>
+            </ListViewItem>
+            <ListViewItem>
+                <WrapPanel>
+                    <Image Source="/AquaL;component/Icons/settings_icon_language.png" Width="26" Height="26"/>
+                    <Label Content="语言" Margin="10,0,0,0"/>
+                </WrapPanel>
+            </ListViewItem>
+            <ListViewItem x:Name="About">
+                <WrapPanel>
+                    <Image Source="/AquaL;component/Icons/settings_icon_theme.png" Width="26" Height="26"/>
+                    <Label Content="主题" Margin="10,0,0,0"/>
+                </WrapPanel>
+            </ListViewItem>
+            <ListViewItem>
+                <WrapPanel>
+                    <Image Source="/AquaL;component/Icons/settings_icon_about.png" Width="26" Height="26"/>
+                    <Label Content="关于" Margin="10,0,0,0"/>
+                </WrapPanel>
+            </ListViewItem>
+            <ListViewItem>
+                <WrapPanel>
+                    <Image Source="/AquaL;component/Icons/settings_icon_advance.png" Width="26" Height="26"/>
+                    <Label Content="高级选项" Margin="10,0,0,0"/>
+                </WrapPanel>
+            </ListViewItem>
+        </ListView>
+        <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="200,80,20,40" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
+            <Frame x:Name="settings_view" NavigationUIVisibility="Hidden"/>
+        </ScrollViewer>
+
+    </Grid>
+</Page>
